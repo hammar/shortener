@@ -97,6 +97,8 @@
 		case(2): queryBase=@"http://api.tr.im/api/trim_url.xml?url="; break;
 	}
 	
+	// TODO: Check if input URL is actually a URL.
+	
 	NSString *queryUrlAsString = [queryBase stringByAppendingString:longURL];
     NSURL *queryUrl = [NSURL URLWithString: queryUrlAsString];
 	NSURLRequest *theRequest = [NSURLRequest requestWithURL:queryUrl 
