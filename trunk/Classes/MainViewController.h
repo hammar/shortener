@@ -12,12 +12,18 @@
 	IBOutlet UITextField* shortenedURL;
 	IBOutlet UITextField* urlToShorten;
 	IBOutlet UISegmentedControl* shortenerChooser;
-	IBOutlet UIActivityIndicatorView* shortenerSpinner;
 	IBOutlet UIButton* shortenerButton;
+	
+	NSMutableData *receivedData;
 }
 
 - (IBAction)showInfo;
 - (IBAction)textFieldDoneEditing:(id)sender;
 - (IBAction)doShortening:(id)sender;
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error;
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection;
 
 @end
