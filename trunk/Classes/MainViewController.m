@@ -112,6 +112,17 @@
 
 - (IBAction)doShortening:(id)sender{
 	NSString *longURL = [urlToShorten text];
+
+	// Check if longURL is really an URL
+	NSURL *longUrlAsUrl = [NSURL URLWithString: longURL];
+	if (longUrlAsUrl == nil)
+	{
+		// URL was malformed - abort shortening
+		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Error" message:@"URL entered was malformed." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
+		[alert show];
+		return;
+	}
+	
 	NSInteger index = shortenerChooser.selectedSegmentIndex;
 	
 	NSString *queryBase = nil;
@@ -120,8 +131,6 @@
 		case(1): queryBase=@"http://is.gd/api.php?longurl="; break;
 		case(2): queryBase=@"http://api.tr.im/api/trim_url.xml?url="; break;
 	}
-	
-	// TODO: Check if input URL is actually a URL.
 	
 	NSString *queryUrlAsString = [queryBase stringByAppendingString:longURL];
     NSURL *queryUrl = [NSURL URLWithString: queryUrlAsString];
@@ -164,11 +173,14 @@
     // receivedData is declared as a method instance elsewhere
     [receivedData release];
 	
-    // inform the user
-	// TODO: Need to pop up some alert box
-    NSLog(@"Connection failed! Error - %@ %@",
-          [error localizedDescription],
-          [[error userInfo] objectForKey:NSErrorFailingURLStringKey]);
+    // Construct error message
+	NSString *errorMessage = [NSString stringWithFormat:@"Shortening failed! Error - %@ %@",
+							  [error localizedDescription],
+							  [[error userInfo] objectForKey:NSErrorFailingURLStringKey]];
+	
+	// Display error message
+	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Error" message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
+	[alert show];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
