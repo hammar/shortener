@@ -118,8 +118,9 @@
 	if (longUrlAsUrl == nil)
 	{
 		// URL was malformed - abort shortening
-		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Error" message:@"URL entered was malformed." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"URL entered was malformed." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[alert show];
+		[alert release];
 		return;
 	}
 	
@@ -179,8 +180,9 @@
 							  [[error userInfo] objectForKey:NSErrorFailingURLStringKey]];
 	
 	// Display error message
-	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Error" message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 	[alert show];
+	[alert release];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
@@ -202,13 +204,15 @@
 	}
 	else {
 		// Display error message (tr.im returns empty values if something goes wrong for instance)
-		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Error" message:@"No URl returned from shortening service." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
-		[alert show];		
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No URl returned from shortening service." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		[alert show];
+		[alert release];
 	}
 	
-    // release the connection, and the data object
+    // release the connection, data object and string interpretation of data object
     [connection release];
     [receivedData release];
+	[receivedDataAsString release];
 }
 
 @end
