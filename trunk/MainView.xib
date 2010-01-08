@@ -122,7 +122,7 @@
 							<int key="IBUIKeyboardType">3</int>
 							<bool key="IBUIEnablesReturnKeyAutomatically">YES</bool>
 						</object>
-						<int key="IBUIClearButtonMode">1</int>
+						<int key="IBUIClearButtonMode">3</int>
 					</object>
 					<object class="IBUIButton" id="1047215083">
 						<reference key="NSNextResponder" ref="883825266"/>
@@ -296,15 +296,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">textFieldDoneEditing:</string>
-						<reference key="source" ref="421450821"/>
-						<reference key="destination" ref="372490531"/>
-						<int key="IBEventType">20</int>
-					</object>
-					<int key="connectionID">70</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">showInfo</string>
 						<reference key="source" ref="371056266"/>
 						<reference key="destination" ref="372490531"/>
@@ -378,6 +369,42 @@
 						<int key="IBEventType">7</int>
 					</object>
 					<int key="connectionID">90</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">hideKeyboard:</string>
+						<reference key="source" ref="421450821"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">20</int>
+					</object>
+					<int key="connectionID">92</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">hideKeyboard:</string>
+						<reference key="source" ref="479725285"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">93</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">hideKeyboard:</string>
+						<reference key="source" ref="1047215083"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">95</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">hideKeyboard:</string>
+						<reference key="source" ref="453906498"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">96</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -499,7 +526,7 @@
 					<string>MainViewController</string>
 					<string>UIResponder</string>
 					<string>MainView</string>
-					<string>{{251, 185}, {320, 480}}</string>
+					<string>{{378, 621}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -529,7 +556,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">90</int>
+			<int key="maxID">97</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptionsV3.1+">
@@ -551,9 +578,9 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>copyToPasteBoard:</string>
 							<string>doShortening:</string>
+							<string>hideKeyboard:</string>
 							<string>pasteFromPasteBoard:</string>
 							<string>showInfo</string>
-							<string>textFieldDoneEditing:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>

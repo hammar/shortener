@@ -81,8 +81,8 @@
     [super dealloc];
 }
 
-- (IBAction)textFieldDoneEditing:(id)sender{
-	[sender resignFirstResponder];
+- (IBAction)hideKeyboard:(id)sender{
+	[urlToShorten resignFirstResponder];
 }
 
 - (IBAction)pasteFromPasteBoard:(id)sender{
@@ -108,6 +108,14 @@
 		[shortenedURL setText:@"Copied!"];
 		shortenedURL.textColor = [UIColor darkGrayColor];
 	}
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [[event allTouches] anyObject];
+    if ([urlToShorten isFirstResponder] && [touch view] != urlToShorten) {
+        [urlToShorten resignFirstResponder];
+    }
+    [super touchesBegan:touches withEvent:event];
 }
 
 - (IBAction)doShortening:(id)sender{
