@@ -55,8 +55,6 @@
 	[controller release];
 }
 
-
-
 /*
  // Override to allow orientations other than the default portrait orientation.
  - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -141,6 +139,7 @@
     [receivedData release];
 	
     // inform the user
+	// TODO: Need to pop up some alert box
     NSLog(@"Connection failed! Error - %@ %@",
           [error localizedDescription],
           [[error userInfo] objectForKey:NSErrorFailingURLStringKey]);
