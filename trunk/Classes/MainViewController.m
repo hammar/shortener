@@ -111,11 +111,12 @@
 }
 
 - (IBAction)doShortening:(id)sender{
-	NSString *longURL = [urlToShorten text];
-
-	// Check if longURL is really an URL
+	// Trim incoming URL (to avoid the corner case of generating a valid zero length url)
+	NSString *longURL = [[urlToShorten text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+	
+	// Check that longURL is greater than zero length and is not malformed
 	NSURL *longUrlAsUrl = [NSURL URLWithString: longURL];
-	if (longUrlAsUrl == nil)
+	if (longUrlAsUrl == nil || [longURL length]<=0)
 	{
 		// URL was malformed - abort shortening
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"URL entered was malformed." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -157,6 +158,26 @@
     // redirect, so each time we reset the data.
     // receivedData is declared as a method instance elsewhere
     [receivedData setLength:0];
+	
+	// Check so that the return code does not indicate an error
+	if ([response respondsToSelector:@selector(statusCode)])
+	{
+		int statusCode = [((NSHTTPURLResponse *)response) statusCode];
+		if (statusCode >= 400)
+		{
+			[connection cancel];  // stop connecting; no more delegate messages
+			NSDictionary *errorInfo
+			= [NSDictionary dictionaryWithObject:[NSString stringWithFormat:
+												  NSLocalizedString(@"Server returned status code %d",@""),
+												  statusCode]
+										  forKey:NSLocalizedDescriptionKey];
+			NSError *statusError
+			= [NSError errorWithDomain:NSURLErrorDomain
+								  code:statusCode
+							  userInfo:errorInfo];
+			[self connection:connection didFailWithError:statusError];
+		}
+	}
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
@@ -190,6 +211,9 @@
     // Handle the data
 	NSString *receivedDataAsString = [[NSString alloc] initWithData: receivedData  encoding: NSASCIIStringEncoding];
 	
+	// Trim the recieved string (as tr.im API returns a single whitespace if an error occurs)
+	receivedDataAsString = [receivedDataAsString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+	
 	// If we have returned some value
 	if (receivedDataAsString.length > 0)
 	{
@@ -203,7 +227,7 @@
 		hasUrlBeenCopied = false;
 	}
 	else {
-		// Display error message (tr.im returns empty values if something goes wrong for instance)
+		// Display error message if receieved data is of zero length after trimming.
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No URl returned from shortening service." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[alert show];
 		[alert release];
