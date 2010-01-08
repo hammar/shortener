@@ -119,7 +119,9 @@
 						</object>
 						<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 						<float key="IBUIMinimumFontSize">17</float>
-						<object class="IBUITextInputTraits" key="IBUITextInputTraits"/>
+						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
+							<int key="IBUIKeyboardType">3</int>
+						</object>
 						<int key="IBUIClearButtonMode">1</int>
 					</object>
 					<object class="IBUIButton" id="1047215083">
