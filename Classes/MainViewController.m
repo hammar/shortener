@@ -129,7 +129,7 @@
 	switch(index) {
 		case(0): queryBase=@"http://tinyurl.com/api-create.php?url="; break;
 		case(1): queryBase=@"http://is.gd/api.php?longurl="; break;
-		case(2): queryBase=@"http://api.tr.im/api/trim_url.xml?url="; break;
+		case(2): queryBase=@"http://api.tr.im/v1/trim_simple?url="; break;
 	}
 	
 	NSString *queryUrlAsString = [queryBase stringByAppendingString:longURL];
@@ -188,23 +188,23 @@
     // Handle the data
 	NSString *receivedDataAsString = [[NSString alloc] initWithData: receivedData  encoding: NSASCIIStringEncoding];
 	
-	// Check whether it's a tr.im style response
-	NSRange trimTextRange;
-	trimTextRange =[receivedDataAsString rangeOfString:@"<trim>"];
-	if(trimTextRange.location != NSNotFound)
+	// If we have returned some value
+	if (receivedDataAsString.length > 0)
 	{
-		// TODO: This is a tr.im response, it needs to be parsed
+		// Set the shortened field
+		[shortenedURL setText:receivedDataAsString];
+		
+		// Reset color of shortened URL field
+		shortenedURL.textColor = [UIColor blackColor];
+		
+		// Reset URL has been copied variable
+		hasUrlBeenCopied = false;
 	}
 	else {
-		// This is a straight up response, no funky business
-		[shortenedURL setText:receivedDataAsString];
+		// Display error message (tr.im returns empty values if something goes wrong for instance)
+		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Error" message:@"No URl returned from shortening service." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
+		[alert show];		
 	}
-	
-	// Reset color of shortened URL field
-	shortenedURL.textColor = [UIColor blackColor];
-	
-	// Reset URL has been copied variable
-	hasUrlBeenCopied = false;
 	
     // release the connection, and the data object
     [connection release];
