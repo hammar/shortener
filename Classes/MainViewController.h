@@ -20,10 +20,12 @@
 }
 
 - (IBAction)showInfo;
-- (IBAction)textFieldDoneEditing:(id)sender;
+- (IBAction)hideKeyboard:(id)sender;
 - (IBAction)doShortening:(id)sender;
 - (IBAction)pasteFromPasteBoard:(id)sender;
 - (IBAction)copyToPasteBoard:(id)sender;
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
