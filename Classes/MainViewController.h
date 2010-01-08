@@ -15,12 +15,15 @@
 	IBOutlet UIButton* shortenerButton;
 	
 	NSMutableData *receivedData;
+	
+	Boolean hasUrlBeenCopied;
 }
 
 - (IBAction)showInfo;
 - (IBAction)textFieldDoneEditing:(id)sender;
 - (IBAction)doShortening:(id)sender;
 - (IBAction)pasteFromPasteBoard:(id)sender;
+- (IBAction)copyToPasteBoard:(id)sender;
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;

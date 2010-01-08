@@ -16,6 +16,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         // Custom initialization
+		hasUrlBeenCopied = false;
     }
     return self;
 }
@@ -86,11 +87,27 @@
 
 - (IBAction)pasteFromPasteBoard:(id)sender{
 	UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+	
+	// Check if there are strings in pasteboard
 	if ([pasteboard containsPasteboardTypes: [NSArray arrayWithObject:@"public.utf8-plain-text"]])
 	{
+		// If so, paste to url to shorten field
 		[urlToShorten setText:[pasteboard string]];
 	}
+}
 
+- (IBAction)copyToPasteBoard:(id)sender {
+	UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+	if (!hasUrlBeenCopied)
+	{
+		// Copy to pasteboard
+		pasteboard.string = [shortenedURL text];
+		hasUrlBeenCopied = true;
+		
+		// Indicate successful copy in GUI
+		[shortenedURL setText:@"Copied!"];
+		shortenedURL.textColor = [UIColor darkGrayColor];
+	}
 }
 
 - (IBAction)doShortening:(id)sender{
@@ -170,6 +187,12 @@
 		// This is a straight up response, no funky business
 		[shortenedURL setText:receivedDataAsString];
 	}
+	
+	// Reset color of shortened URL field
+	shortenedURL.textColor = [UIColor blackColor];
+	
+	// Reset URL has been copied variable
+	hasUrlBeenCopied = false;
 	
     // release the connection, and the data object
     [connection release];
