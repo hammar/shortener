@@ -84,6 +84,15 @@
 	[sender resignFirstResponder];
 }
 
+- (IBAction)pasteFromPasteBoard:(id)sender{
+	UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+	if ([pasteboard containsPasteboardTypes: [NSArray arrayWithObject:@"public.utf8-plain-text"]])
+	{
+		[urlToShorten setText:[pasteboard string]];
+	}
+
+}
+
 - (IBAction)doShortening:(id)sender{
 	NSString *longURL = [urlToShorten text];
 	NSInteger index = shortenerChooser.selectedSegmentIndex;
