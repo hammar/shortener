@@ -117,7 +117,6 @@
 								<int key="NSID">2</int>
 							</object>
 						</object>
-						<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 						<float key="IBUIMinimumFontSize">17</float>
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<int key="IBUIKeyboardType">3</int>
@@ -190,7 +189,6 @@
 							<reference key="NSCustomColorSpace" ref="150764483"/>
 						</object>
 						<bool key="IBUIClearsOnBeginEditing">YES</bool>
-						<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 						<float key="IBUIMinimumFontSize">17</float>
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits"/>
 					</object>
@@ -278,7 +276,7 @@
 				<reference key="NSSuperview"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
-					<bytes key="NSRGB">MC43MTE5NTY1MjE3IDAuNzExOTU2NTIxNyAwLjcxMTk1NjUyMTcAA</bytes>
+					<bytes key="NSRGB">MC43NjMyOTA0NDYyIDAuNzg5ODU5MTM5IDAuODY5NTY1MjE3NAA</bytes>
 				</object>
 				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
