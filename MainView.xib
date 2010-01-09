@@ -84,20 +84,22 @@
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
+						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 						<float key="IBUIMinimumFontSize">10</float>
 					</object>
 					<object class="IBUILabel" id="774311839">
 						<reference key="NSNextResponder" ref="883825266"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{21, 105}, {147, 21}}</string>
+						<string key="NSFrame">{{21, 105}, {199, 21}}</string>
 						<reference key="NSSuperview" ref="883825266"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="IBUIText">Shortening service:</string>
+						<string key="IBUIText">Select shortening service:</string>
 						<reference key="IBUITextColor" ref="77887581"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
+						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 						<float key="IBUIMinimumFontSize">10</float>
 					</object>
 					<object class="IBUITextField" id="421450821">
@@ -170,6 +172,7 @@
 						<reference key="IBUITextColor" ref="77887581"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
+						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 						<float key="IBUIMinimumFontSize">10</float>
 					</object>
 					<object class="IBUITextField" id="460099349">
@@ -272,7 +275,7 @@
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="786230913"/>
 					</object>
-					<object class="IBUIActivityIndicatorView" id="2052394">
+					<object class="IBUIActivityIndicatorView" id="1015320248">
 						<reference key="NSNextResponder" ref="883825266"/>
 						<int key="NSvFlags">-2147483356</int>
 						<string key="NSFrame">{{152, 216}, {20, 20}}</string>
@@ -420,7 +423,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">shortenerSpinner</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="2052394"/>
+						<reference key="destination" ref="1015320248"/>
 					</object>
 					<int key="connectionID">99</int>
 				</object>
@@ -460,7 +463,7 @@
 							<reference ref="453906498"/>
 							<reference ref="479725285"/>
 							<reference ref="1047215083"/>
-							<reference ref="2052394"/>
+							<reference ref="1015320248"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -520,7 +523,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">98</int>
-						<reference key="object" ref="2052394"/>
+						<reference key="object" ref="1015320248"/>
 						<reference key="parent" ref="883825266"/>
 					</object>
 				</object>
