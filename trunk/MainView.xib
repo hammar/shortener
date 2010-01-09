@@ -127,7 +127,7 @@
 					<object class="IBUIButton" id="1047215083">
 						<reference key="NSNextResponder" ref="883825266"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 203}, {280, 55}}</string>
+						<string key="NSFrame">{{20, 201}, {280, 55}}</string>
 						<reference key="NSSuperview" ref="883825266"/>
 						<object class="NSColor" key="IBUIBackgroundColor" id="997519924">
 							<int key="NSColorSpace">3</int>
@@ -143,7 +143,7 @@
 							<int key="NSfFlags">16</int>
 						</object>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Shorten!</string>
+						<string key="IBUINormalTitle">Shorten</string>
 						<object class="NSColor" key="IBUIHighlightedTitleColor" id="441028099">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
@@ -271,6 +271,16 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MyAwLjMwOTgwMzkzIDAuNTIxNTY4NjYAA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="786230913"/>
+					</object>
+					<object class="IBUIActivityIndicatorView" id="2052394">
+						<reference key="NSNextResponder" ref="883825266"/>
+						<int key="NSvFlags">-2147483356</int>
+						<string key="NSFrame">{{152, 216}, {20, 20}}</string>
+						<reference key="NSSuperview" ref="883825266"/>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<int key="IBUIStyle">2</int>
 					</object>
 				</object>
 				<string key="NSFrameSize">{320, 460}</string>
@@ -406,6 +416,14 @@
 					</object>
 					<int key="connectionID">96</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">shortenerSpinner</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="2052394"/>
+					</object>
+					<int key="connectionID">99</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -439,9 +457,10 @@
 							<reference ref="307266727"/>
 							<reference ref="794532856"/>
 							<reference ref="460099349"/>
-							<reference ref="1047215083"/>
 							<reference ref="453906498"/>
 							<reference ref="479725285"/>
+							<reference ref="1047215083"/>
+							<reference ref="2052394"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -499,6 +518,11 @@
 						<reference key="object" ref="479725285"/>
 						<reference key="parent" ref="883825266"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">98</int>
+						<reference key="object" ref="2052394"/>
+						<reference key="parent" ref="883825266"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -520,6 +544,7 @@
 					<string>68.IBPluginDependency</string>
 					<string>86.IBPluginDependency</string>
 					<string>88.IBPluginDependency</string>
+					<string>98.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -527,6 +552,7 @@
 					<string>UIResponder</string>
 					<string>MainView</string>
 					<string>{{378, 621}, {320, 480}}</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -556,7 +582,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">97</int>
+			<int key="maxID">99</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptionsV3.1+">
@@ -598,6 +624,7 @@
 							<string>shortenedURL</string>
 							<string>shortenerButton</string>
 							<string>shortenerChooser</string>
+							<string>shortenerSpinner</string>
 							<string>urlToShorten</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -605,6 +632,7 @@
 							<string>UITextField</string>
 							<string>UIButton</string>
 							<string>UISegmentedControl</string>
+							<string>UIActivityIndicatorView</string>
 							<string>UITextField</string>
 						</object>
 					</object>
