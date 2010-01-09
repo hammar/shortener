@@ -172,7 +172,7 @@
 	if (longUrlAsUrl == nil || [longURL length]<=0)
 	{
 		// URL was malformed - abort shortening
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"URL entered was malformed." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"A malformed URL was entered. Please check your spelling." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[alert show];
 		[alert release];
 		return;
@@ -225,15 +225,12 @@
 		if (statusCode >= 400)
 		{
 			[connection cancel];  // stop connecting; no more delegate messages
-			NSDictionary *errorInfo
-			= [NSDictionary dictionaryWithObject:[NSString stringWithFormat:
-												  NSLocalizedString(@"Server returned status code %d",@""),
-												  statusCode]
-										  forKey:NSLocalizedDescriptionKey];
+			
 			NSError *statusError
 			= [NSError errorWithDomain:NSURLErrorDomain
 								  code:statusCode
-							  userInfo:errorInfo];
+							  userInfo:nil];
+			
 			[self connection:connection didFailWithError:statusError];
 		}
 	}
@@ -255,9 +252,15 @@
     [receivedData release];
 	
     // Construct error message
-	NSString *errorMessage = [NSString stringWithFormat:@"Shortening failed! Error - %@ %@",
-							  [error localizedDescription],
-							  [[error userInfo] objectForKey:NSErrorFailingURLStringKey]];
+	NSString *errorMessage;
+	NSInteger errorCode = [error code];
+	if (errorCode >= 500)
+	{
+		errorMessage = [NSString stringWithFormat:@"The shortening service returned status code %d indicating a server side error.",errorCode];
+	}
+	else {
+		errorMessage = [NSString stringWithFormat:@"The shortening service returned status code %d indicating a client side error.",errorCode];
+	}
 	
 	// Display error message
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -297,7 +300,7 @@
 	}
 	else {
 		// Display error message if receieved data is of zero length after trimming.
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No URl returned from shortening service." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No URL was returned from shortening service. This may indicate a server side error, or an incorrectly entered URL. Please check your spelling and if this does not help, try another shortening service." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[alert show];
 		[alert release];
 	}
