@@ -178,6 +178,12 @@
 		return;
 	}
 	
+	// Start the indicator spinner
+	[shortenerButton setTitle:@"" forState:UIControlStateNormal];
+	[shortenerButton setTitle:@"" forState:UIControlStateHighlighted];
+	[shortenerButton setTitle:@"" forState:UIControlStateSelected];
+	[shortenerSpinner startAnimating];
+	
 	NSInteger index = shortenerChooser.selectedSegmentIndex;
 	
 	NSString *queryBase = nil;
@@ -257,6 +263,16 @@
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 	[alert show];
 	[alert release];
+	
+	// Reset shortening button (hiding spinner)
+	[self resetShorteningButton];
+}
+
+- (void)resetShorteningButton {
+	[shortenerSpinner stopAnimating];
+	[shortenerButton setTitle:@"Shorten" forState:UIControlStateNormal];
+	[shortenerButton setTitle:@"Shorten" forState:UIControlStateHighlighted];
+	[shortenerButton setTitle:@"Shorten" forState:UIControlStateSelected];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
@@ -290,6 +306,9 @@
     [connection release];
     [receivedData release];
 	[receivedDataAsString release];
+	
+	// Reset shortening button (hiding spinner)
+	[self resetShorteningButton];
 }
 
 @end

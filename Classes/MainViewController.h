@@ -13,6 +13,7 @@
 	IBOutlet UITextField* urlToShorten;
 	IBOutlet UISegmentedControl* shortenerChooser;
 	IBOutlet UIButton* shortenerButton;
+	IBOutlet UIActivityIndicatorView* shortenerSpinner;
 	
 	NSMutableData *receivedData;
 	
@@ -27,6 +28,7 @@
 
 - (void)saveState;
 - (void)restoreState;
+- (void)resetShorteningButton;
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 
