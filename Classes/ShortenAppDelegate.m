@@ -23,8 +23,15 @@
 	[aController release];
 	
     mainViewController.view.frame = [UIScreen mainScreen].applicationFrame;
+	
+	[mainViewController restoreState];
+	
 	[window addSubview:[mainViewController view]];
     [window makeKeyAndVisible];
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+	[mainViewController saveState];
 }
 
 

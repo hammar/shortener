@@ -96,6 +96,50 @@
 	}
 }
 
+/* 
+ This method gets the state of key aspects of the view controller that
+ need to be stored for subsequent launches of the app.
+ */
+- (NSDictionary *)getState {
+	NSArray *keys = [NSArray arrayWithObjects:@"urlToShorten", @"shortenedUrl", @"hasUrlBeenCopied", nil];
+	NSArray *objects = [NSArray arrayWithObjects:[urlToShorten text], [shortenedURL text], hasUrlBeenCopied, nil];
+	NSDictionary *stateDictionary = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
+	return stateDictionary;
+}
+
+/*
+ This method reloads the state of the app based upon the state stored at
+ previous app launches.
+ */
+- (void)setState:(NSDictionary *)stateDictionary {
+	[urlToShorten setText:[stateDictionary objectForKey:@"urlToShorten"]];
+	[shortenedURL setText:[stateDictionary objectForKey:@"shortenedUrl"]];
+	if ([stateDictionary objectForKey:@"hasUrlBeenCopied"])
+	{
+		hasUrlBeenCopied = true;
+		[shortenedURL setTextColor:[UIColor darkGrayColor]];
+	}
+}
+
+// Method saves key variables for next launch.
+- (void)saveState {
+	[[NSUserDefaults standardUserDefaults] setObject:[urlToShorten text] forKey:@"urlToShorten"];
+	[[NSUserDefaults standardUserDefaults] setObject:[shortenedURL text] forKey:@"shortenedURL"];
+	[[NSUserDefaults standardUserDefaults] setBool:hasUrlBeenCopied forKey:@"hasUrlBeenCopied"];
+}
+
+// Method restores state from last time app was run.
+- (void)restoreState {
+	[urlToShorten setText:[[NSUserDefaults standardUserDefaults] objectForKey:@"urlToShorten"]];
+	[shortenedURL setText:[[NSUserDefaults standardUserDefaults] objectForKey:@"shortenedURL"]];
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"hasUrlBeenCopied"])
+	{
+		hasUrlBeenCopied = true;
+		[shortenedURL setTextColor:[UIColor darkGrayColor]];
+	}
+}
+
+// Copies shortened URL to pasteboard.
 - (IBAction)copyToPasteBoard:(id)sender {
 	UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
 	if (!hasUrlBeenCopied)
@@ -110,6 +154,7 @@
 	}
 }
 
+// Catches touches to the view itself, i.e. background touches that hide the keyboard.
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
     if ([urlToShorten isFirstResponder] && [touch view] != urlToShorten) {
