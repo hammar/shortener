@@ -25,6 +25,9 @@
 - (IBAction)pasteFromPasteBoard:(id)sender;
 - (IBAction)copyToPasteBoard:(id)sender;
 
+- (void)saveState;
+- (void)restoreState;
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
