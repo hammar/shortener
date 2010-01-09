@@ -167,9 +167,44 @@
 	// Trim incoming URL (to avoid the corner case of generating a valid zero length url)
 	NSString *longURL = [[urlToShorten text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 	
-	// Check that longURL is greater than zero length and is not malformed
-	NSURL *longUrlAsUrl = [NSURL URLWithString: longURL];
-	if (longUrlAsUrl == nil || [longURL length]<=0)
+	// Escape non valid characters in URL
+	NSString * encodedUrlString = (NSString *)CFURLCreateStringByAddingPercentEscapes(
+																					  NULL,
+																					  (CFStringRef)longURL,
+																					  NULL,
+																					  (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+																					  kCFStringEncodingUTF8 );
+
+	
+	// Check that escaped and trimmed URL string is greater than zero length
+	if ([encodedUrlString length]<=0)
+	{
+		// If not - URL was malformed - abort shortening
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"A malformed URL was entered. Please check your spelling." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		[alert show];
+		[alert release];
+		return;
+	}
+	
+	// Start the progress indicator spinner
+	[shortenerButton setTitle:@"" forState:UIControlStateNormal];
+	[shortenerButton setTitle:@"" forState:UIControlStateHighlighted];
+	[shortenerButton setTitle:@"" forState:UIControlStateSelected];
+	[shortenerSpinner startAnimating];
+	
+	// Generate shortening service query URL based on selected shortening service
+	NSInteger index = shortenerChooser.selectedSegmentIndex;
+	NSString *queryBase = nil;
+	switch(index) {
+		case(0): queryBase=@"http://tinyurl.com/api-create.php?url="; break;
+		case(1): queryBase=@"http://is.gd/api.php?longurl="; break;
+		case(2): queryBase=@"http://api.tr.im/v1/trim_simple?url="; break;
+	}
+	NSString *queryUrlAsString = [queryBase stringByAppendingString:encodedUrlString];
+    NSURL *queryUrl = [NSURL URLWithString: queryUrlAsString];
+
+	// Check that generated query URL is not malformed
+	if (queryUrl == nil)
 	{
 		// URL was malformed - abort shortening
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"A malformed URL was entered. Please check your spelling." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -178,23 +213,6 @@
 		return;
 	}
 	
-	// Start the indicator spinner
-	[shortenerButton setTitle:@"" forState:UIControlStateNormal];
-	[shortenerButton setTitle:@"" forState:UIControlStateHighlighted];
-	[shortenerButton setTitle:@"" forState:UIControlStateSelected];
-	[shortenerSpinner startAnimating];
-	
-	NSInteger index = shortenerChooser.selectedSegmentIndex;
-	
-	NSString *queryBase = nil;
-	switch(index) {
-		case(0): queryBase=@"http://tinyurl.com/api-create.php?url="; break;
-		case(1): queryBase=@"http://is.gd/api.php?longurl="; break;
-		case(2): queryBase=@"http://api.tr.im/v1/trim_simple?url="; break;
-	}
-	
-	NSString *queryUrlAsString = [queryBase stringByAppendingString:longURL];
-    NSURL *queryUrl = [NSURL URLWithString: queryUrlAsString];
 	NSURLRequest *theRequest = [NSURLRequest requestWithURL:queryUrl 
 												cachePolicy:NSURLRequestUseProtocolCachePolicy 
 											timeoutInterval:10.0];
