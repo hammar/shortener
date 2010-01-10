@@ -62,7 +62,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1615, 4654}}";
 			sepNavSelRange = "{6673, 0}";
-			sepNavVisRange = "{5285, 1716}";
+			sepNavVisRange = "{5285, 1721}";
 			sepNavWindowFrame = "{{84, 552}, {750, 558}}";
 		};
 	};
@@ -83,7 +83,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Release;
 		activeExecutable = CB483DE010F3A88D002D5F96 /* Shortener */;
-		activeSDKPreference = iphonesimulator3.1.2;
+		activeSDKPreference = iphoneos3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Shortener */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* Shortener */,
@@ -379,6 +379,8 @@
 			CBF9E8E010FA3A2C0081F0D1 /* PBXTextBookmark */ = CBF9E8E010FA3A2C0081F0D1 /* PBXTextBookmark */;
 			CBF9E8E110FA3A2C0081F0D1 /* PBXTextBookmark */ = CBF9E8E110FA3A2C0081F0D1 /* PBXTextBookmark */;
 			CBF9E8E210FA3A2C0081F0D1 /* PBXTextBookmark */ = CBF9E8E210FA3A2C0081F0D1 /* PBXTextBookmark */;
+			CBF9E8E710FA3B3D0081F0D1 /* PBXTextBookmark */ = CBF9E8E710FA3B3D0081F0D1 /* PBXTextBookmark */;
+			CBF9E8F410FA3CC50081F0D1 /* PBXTextBookmark */ = CBF9E8F410FA3CC50081F0D1 /* PBXTextBookmark */;
 		};
 		sourceControlManager = CB483DF010F3A8AD002D5F96 /* Source Control */;
 		userBuildSettings = {
@@ -1905,6 +1907,26 @@
 		rLoc = 6673;
 		rType = 0;
 		vrLen = 1716;
+		vrLoc = 5285;
+	};
+	CBF9E8E710FA3B3D0081F0D1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
+		name = "MainViewController.m: 205";
+		rLen = 0;
+		rLoc = 6673;
+		rType = 0;
+		vrLen = 1721;
+		vrLoc = 5285;
+	};
+	CBF9E8F410FA3CC50081F0D1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
+		name = "MainViewController.m: 205";
+		rLen = 0;
+		rLoc = 6673;
+		rType = 0;
+		vrLen = 1721;
 		vrLoc = 5285;
 	};
 }
