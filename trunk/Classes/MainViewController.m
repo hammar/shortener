@@ -163,10 +163,22 @@
     [super touchesBegan:touches withEvent:event];
 }
 
+// Convenience method to check if one string contains another string
+- (BOOL)doesStringContainSubstring:(NSString *)firstString :(NSString *)secondString {
+	NSRange range = [firstString rangeOfString:secondString options:NSCaseInsensitiveSearch];
+	if (range.location != NSNotFound) {
+		return TRUE;
+	}
+	else {
+		return FALSE;
+	}
+
+}
+
 - (IBAction)doShortening:(id)sender{
 	// Trim incoming URL (to avoid the corner case of generating a valid zero length url)
 	NSString *longURL = [[urlToShorten text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-	
+
 	// Escape non valid characters in URL
 	NSString * encodedUrlString = (NSString *)CFURLCreateStringByAddingPercentEscapes(
 																					  NULL,
@@ -185,6 +197,20 @@
 		[alert release];
 		return;
 	}
+	
+	
+	// Check that long URL is not already shortened using one of the services.
+	NSURL *longUrlAsUrl = [NSURL URLWithString:longURL];
+	NSString *longUrlHost = [longUrlAsUrl host];
+	if ([self doesStringContainSubstring:longUrlHost:@"is.gd"] || [self doesStringContainSubstring:longUrlHost:@"tinyurl.com"] || [self doesStringContainSubstring:longUrlHost:@"tr.im"])
+	{
+		// Long URL has already been shortened. Abort.
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"The URL you have entered has already been shortened and cannot be shortened further." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		[alert show];
+		[alert release];
+		return;
+	}
+		
 	
 	// Start the progress indicator spinner
 	[shortenerButton setTitle:@"" forState:UIControlStateNormal];

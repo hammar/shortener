@@ -32,6 +32,8 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 
+- (BOOL)doesStringContainSubstring:(NSString *)firstString :(NSString *)secondString;
+
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error;

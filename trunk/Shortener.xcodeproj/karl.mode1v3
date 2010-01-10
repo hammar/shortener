@@ -279,9 +279,9 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>32</integer>
-									<integer>28</integer>
-									<integer>27</integer>
+									<integer>5</integer>
+									<integer>1</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -315,12 +315,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Shortener-Info.plist</string>
+								<string>MainViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -328,11 +330,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Shortener-Info.plist</string>
+										<string>MainViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CBF9E8C910FA35220081F0D1</string>
+										<string>CBF9E8E210FA3A2C0081F0D1</string>
 										<key>history</key>
 										<array>
 											<string>CBAD492710F6943F00040DB7</string>
@@ -346,10 +348,10 @@
 											<string>CBF9E77F10F80F6A0081F0D1</string>
 											<string>CBF9E78010F80F6A0081F0D1</string>
 											<string>CBF9E78110F80F6A0081F0D1</string>
-											<string>CBF9E79710F8CD5D0081F0D1</string>
 											<string>CBF9E81F10F8D4770081F0D1</string>
-											<string>CBF9E89310FA08610081F0D1</string>
-											<string>CBF9E78510F8BB2E0081F0D1</string>
+											<string>CBF9E8DA10FA39C00081F0D1</string>
+											<string>CBF9E8E010FA3A2C0081F0D1</string>
+											<string>CBF9E8E110FA3A2C0081F0D1</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -371,8 +373,6 @@
 							<string>585pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -549,7 +549,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>CBF9E8CA10FA35220081F0D1</string>
 		<string>CBF9E8CB10FA35220081F0D1</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>CB483E0B10F3B4B5002D5F96</string>
@@ -578,7 +577,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>MainViewController.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
