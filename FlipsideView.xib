@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="40"/>
+			<integer value="50"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -60,58 +60,35 @@
 							</object>
 						</object>
 					</object>
-					<object class="IBUILabel" id="538595688">
+					<object class="IBUITextView" id="39125542">
 						<reference key="NSNextResponder" ref="249263867"/>
-						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{20, 53}, {280, 72}}</string>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{0, 44}, {320, 416}}</string>
 						<reference key="NSSuperview" ref="249263867"/>
-						<object class="NSColor" key="IBUIBackgroundColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MSAxIDEgMAA</bytes>
-						</object>
 						<bool key="IBUIOpaque">NO</bool>
-						<bool key="IBUIAutoresizesSubviews">NO</bool>
-						<int key="IBUIContentMode">4</int>
-						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="IBUIText">This simple little URL-shortening application was proposed as a learning experiment by Fredrik Krohnman. Many thanks for the idea! </string>
-						<object class="NSFont" key="IBUIFont" id="415637361">
-							<string key="NSName">Helvetica</string>
-							<double key="NSSize">14</double>
-							<int key="NSfFlags">16</int>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<bool key="IBUIMultipleTouchEnabled">YES</bool>
+						<bool key="IBUIScrollEnabled">NO</bool>
+						<bool key="IBUIShowsHorizontalScrollIndicator">NO</bool>
+						<bool key="IBUIShowsVerticalScrollIndicator">NO</bool>
+						<bool key="IBUIDelaysContentTouches">NO</bool>
+						<bool key="IBUICanCancelContentTouches">NO</bool>
+						<bool key="IBUIBouncesZoom">NO</bool>
+						<bool key="IBUIEditable">NO</bool>
+						<string type="base64-UTF8" key="IBUIText">VGhpcyBzaW1wbGUgbGl0dGxlIFVSTC1zaG9ydGVuaW5nIGFwcGxpY2F0aW9uIHdhcyBwcm9wb3NlZCBh
+cyBhIGxlYXJuaW5nIGV4cGVyaW1lbnQgYnkgRnJlZHJpayBLcm9obm1hbi4gTWFueSB0aGFua3MgZm9y
+IHRoZSBpZGVhISAKClRoZSBhcHAgaXMgbGljZW5zZWQgdW5kZXIgdGhlIEdOVSBHZW5lcmFsIFB1Ymxp
+YyBMaWNlbnNlLCB2ZXJzaW9uIDMuIFRoZSBzb3VyY2UgY29kZSBjYW4gYmUgY2hlY2tlZCBvdXQgYW5k
+IGJ1ZyByZXBvcnRzIG9yIGZlYXR1cmUgcmVxdWVzdHMgY2FuIGJlIHN1Ym1pdHRlZCBhdCBodHRwOi8v
+c2hvcnRlbmVyLmdvb2dsZWNvZGUuY29tLy4KClRoZSBzaG9ydGVuaW5nIHNlcnZpY2VzIG1heSBvciBt
+YXkgbm90IGJlIG9wZXJhdGlvbmFsIGF0IGFueSBnaXZlbiB0aW1lLiBUaGUgYXV0aG9yIG9mIHRoaXMg
+cHJvZ3JhbSBkb2VzIG5vdCBoYXZlIGFueSBjb250cm9sIG92ZXIgdGhlIHNlcnZpY2VzIGFuZCBjYW5u
+b3QgdGFrZSByZXNwb25zaWJpbGl0eSBmb3IgdGhlaXIgd29ya2luZ3MuIElmIG9uZSBvZiB0aGVtIGRv
+ZXMgbm90IHdvcmsgZm9yIHlvdSwgcGxlYXNlIHRyeSBhbm90aGVyLg</string>
+						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
+							<int key="IBUIAutocapitalizationType">2</int>
 						</object>
-						<object class="NSColor" key="IBUITextColor" id="472204478">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MCAwIDAAA</bytes>
-						</object>
-						<nil key="IBUIHighlightedColor"/>
-						<int key="IBUIBaselineAdjustment">1</int>
-						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
-						<float key="IBUIMinimumFontSize">10</float>
-						<int key="IBUINumberOfLines">0</int>
-						<int key="IBUILineBreakMode">0</int>
-					</object>
-					<object class="IBUILabel" id="7174296">
-						<reference key="NSNextResponder" ref="249263867"/>
-						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{20, 133}, {280, 72}}</string>
-						<reference key="NSSuperview" ref="249263867"/>
-						<object class="NSColor" key="IBUIBackgroundColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MSAxIDEgMAA</bytes>
-						</object>
-						<bool key="IBUIOpaque">NO</bool>
-						<bool key="IBUIAutoresizesSubviews">NO</bool>
-						<int key="IBUIContentMode">4</int>
-						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="IBUIText">The shortening services may or may not be operational at any given time. If one does not work for you, please try another.</string>
-						<reference key="IBUIFont" ref="415637361"/>
-						<reference key="IBUITextColor" ref="472204478"/>
-						<nil key="IBUIHighlightedColor"/>
-						<int key="IBUIBaselineAdjustment">1</int>
-						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
-						<float key="IBUIMinimumFontSize">10</float>
-						<int key="IBUINumberOfLines">0</int>
-						<int key="IBUILineBreakMode">0</int>
+						<int key="IBUIDataDetectorTypes">2</int>
 					</object>
 				</object>
 				<string key="NSFrameSize">{320, 460}</string>
@@ -172,8 +149,7 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="871675769"/>
-							<reference ref="538595688"/>
-							<reference ref="7174296"/>
+							<reference ref="39125542"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -201,13 +177,8 @@
 						<reference key="parent" ref="553200710"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">46</int>
-						<reference key="object" ref="538595688"/>
-						<reference key="parent" ref="249263867"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">48</int>
-						<reference key="object" ref="7174296"/>
+						<int key="objectID">50</int>
+						<reference key="object" ref="39125542"/>
 						<reference key="parent" ref="249263867"/>
 					</object>
 				</object>
@@ -224,16 +195,14 @@
 					<string>42.IBPluginDependency</string>
 					<string>43.IBPluginDependency</string>
 					<string>44.IBPluginDependency</string>
-					<string>46.IBPluginDependency</string>
-					<string>48.IBPluginDependency</string>
+					<string>50.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>FlipsideViewController</string>
 					<string>UIResponder</string>
 					<string>FlipsideView</string>
-					<string>{{241, 335}, {320, 480}}</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>{{396, 260}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -257,7 +226,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">49</int>
+			<int key="maxID">50</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -422,14 +391,6 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBFrameworkSource</string>
 						<string key="minorKey">UIKit.framework/Headers/UIBarItem.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">UILabel</string>
-					<string key="superclassName">UIView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBFrameworkSource</string>
-						<string key="minorKey">UIKit.framework/Headers/UILabel.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
