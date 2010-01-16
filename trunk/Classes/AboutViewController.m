@@ -1,6 +1,6 @@
 //
-//  FlipsideViewController.m
-//  Shorten
+//  AboutViewController.m
+//  Shortener
 //
 //  Created by Karl Hammar on 2010-01-05.
 //  Copyright __MyCompanyName__ 2010. All rights reserved.
@@ -20,7 +20,7 @@
 
 
 - (IBAction)done {
-	[self.delegate flipsideViewControllerDidFinish:self];	
+	[self.delegate aboutViewControllerDidFinish:self];	
 }
 
 

@@ -7,8 +7,6 @@
 //
 
 #import "MainViewController.h"
-#import "MainView.h"
-
 
 @implementation MainViewController
 
@@ -38,15 +36,31 @@
  */
 
 
-- (void)flipsideViewControllerDidFinish:(AboutViewController *)controller {
-    
+- (void)aboutViewControllerDidFinish:(AboutViewController *)controller {
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)settingsViewControllerDidFinish:(SettingsViewController *)controller {
 	[self dismissModalViewControllerAnimated:YES];
 }
 
 
 - (IBAction)showInfo {    
 	
-	AboutViewController *controller = [[AboutViewController alloc] initWithNibName:@"FlipsideView" bundle:nil];
+	AboutViewController *controller = [[AboutViewController alloc] initWithNibName:@"AboutView" bundle:nil];
+	controller.delegate = self;
+	
+	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+	[self presentModalViewController:controller animated:YES];
+	
+	[controller release];
+}
+
+
+- (IBAction)showSettings {    
+	
+	SettingsViewController *controller = [[SettingsViewController alloc] initWithNibName:@"SettingsView" bundle:nil];
+	
 	controller.delegate = self;
 	
 	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
