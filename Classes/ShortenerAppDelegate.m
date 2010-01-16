@@ -6,10 +6,10 @@
 //  Copyright __MyCompanyName__ 2010. All rights reserved.
 //
 
-#import "ShortenAppDelegate.h"
+#import "ShortenerAppDelegate.h"
 #import "MainViewController.h"
 
-@implementation ShortenAppDelegate
+@implementation ShortenerAppDelegate
 
 
 @synthesize window;

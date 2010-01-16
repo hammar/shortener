@@ -8,7 +8,7 @@
 
 @class MainViewController;
 
-@interface ShortenAppDelegate : NSObject <UIApplicationDelegate> {
+@interface ShortenerAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
     MainViewController *mainViewController;
 }
