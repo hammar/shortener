@@ -38,7 +38,7 @@
  */
 
 
-- (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
+- (void)flipsideViewControllerDidFinish:(AboutViewController *)controller {
     
 	[self dismissModalViewControllerAnimated:YES];
 }
@@ -46,7 +46,7 @@
 
 - (IBAction)showInfo {    
 	
-	FlipsideViewController *controller = [[FlipsideViewController alloc] initWithNibName:@"FlipsideView" bundle:nil];
+	AboutViewController *controller = [[AboutViewController alloc] initWithNibName:@"FlipsideView" bundle:nil];
 	controller.delegate = self;
 	
 	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
