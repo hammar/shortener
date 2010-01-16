@@ -6,9 +6,9 @@
 //  Copyright __MyCompanyName__ 2010. All rights reserved.
 //
 
-#import "FlipsideView.h"
+#import "AboutView.h"
 
-@implementation FlipsideView
+@implementation AboutView
 
 
 - (id)initWithFrame:(CGRect)frame {

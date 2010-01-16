@@ -6,10 +6,10 @@
 //  Copyright __MyCompanyName__ 2010. All rights reserved.
 //
 
-#import "FlipsideViewController.h"
+#import "AboutViewController.h"
 
 
-@implementation FlipsideViewController
+@implementation AboutViewController
 
 @synthesize delegate;
 

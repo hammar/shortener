@@ -6,9 +6,9 @@
 //  Copyright __MyCompanyName__ 2010. All rights reserved.
 //
 
-#import "FlipsideViewController.h"
+#import "AboutViewController.h"
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
+@interface MainViewController : UIViewController <AboutViewControllerDelegate> {
 	IBOutlet UITextField* shortenedURL;
 	IBOutlet UITextField* urlToShorten;
 	IBOutlet UISegmentedControl* shortenerChooser;
