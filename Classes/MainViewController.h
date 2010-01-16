@@ -7,8 +7,9 @@
 //
 
 #import "AboutViewController.h"
+#import "SettingsViewController.h"
 
-@interface MainViewController : UIViewController <AboutViewControllerDelegate> {
+@interface MainViewController : UIViewController <AboutViewControllerDelegate,SettingsViewControllerDelegate> {
 	IBOutlet UITextField* shortenedURL;
 	IBOutlet UITextField* urlToShorten;
 	IBOutlet UISegmentedControl* shortenerChooser;
@@ -20,6 +21,7 @@
 	Boolean hasUrlBeenCopied;
 }
 
+- (IBAction)showSettings;
 - (IBAction)showInfo;
 - (IBAction)hideKeyboard:(id)sender;
 - (IBAction)doShortening:(id)sender;

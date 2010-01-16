@@ -1,6 +1,6 @@
 //
-//  FlipsideViewController.h
-//  Shorten
+//  AboutViewController.h
+//  Shortener
 //
 //  Created by Karl Hammar on 2010-01-05.
 //  Copyright __MyCompanyName__ 2010. All rights reserved.
@@ -20,6 +20,6 @@
 
 
 @protocol AboutViewControllerDelegate
-- (void)flipsideViewControllerDidFinish:(AboutViewController *)controller;
+- (void)aboutViewControllerDidFinish:(AboutViewController *)controller;
 @end
 

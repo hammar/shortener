@@ -19,6 +19,8 @@
 		289233B00DB2D0DB0083E9F9 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* AboutViewController.m */; };
 		CB42993410F61DA10008DA65 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CB42993310F61DA10008DA65 /* Icon.png */; };
 		CBA8313B10F76996003117E1 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = CBA8313A10F76996003117E1 /* iTunesArtwork */; };
+		CBB12B04110223A800E58E7F /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBB12B03110223A800E58E7F /* SettingsView.xib */; };
+		CBB12B0D1102242900E58E7F /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB12B0C1102242900E58E7F /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,9 @@
 		8D1107310486CEB800E47090 /* Shortener-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Shortener-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		CB42993310F61DA10008DA65 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../shortener/Icon.png; sourceTree = SOURCE_ROOT; };
 		CBA8313A10F76996003117E1 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		CBB12B03110223A800E58E7F /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
+		CBB12B0B1102242900E58E7F /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = Classes/SettingsViewController.h; sourceTree = "<group>"; };
+		CBB12B0C1102242900E58E7F /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = Classes/SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				289233A00DB2D0730083E9F9 /* Main View */,
+				CBB12B05110223C400E58E7F /* Settings View */,
 				281C6CD70DB2D82200F60ACC /* About View */,
 				080E96DDFE201D6D7F000001 /* Application Delegate */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -119,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				CBA8313A10F76996003117E1 /* iTunesArtwork */,
+				CBB12B03110223A800E58E7F /* SettingsView.xib */,
 				CB42993310F61DA10008DA65 /* Icon.png */,
 				280E754A0DD40C5E005A515E /* AboutView.xib */,
 				280E754B0DD40C5E005A515E /* MainView.xib */,
@@ -136,6 +143,15 @@
 				288765580DF743DE002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CBB12B05110223C400E58E7F /* Settings View */ = {
+			isa = PBXGroup;
+			children = (
+				CBB12B0B1102242900E58E7F /* SettingsViewController.h */,
+				CBB12B0C1102242900E58E7F /* SettingsViewController.m */,
+			);
+			name = "Settings View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +209,7 @@
 				280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */,
 				CB42993410F61DA10008DA65 /* Icon.png in Resources */,
 				CBA8313B10F76996003117E1 /* iTunesArtwork in Resources */,
+				CBB12B04110223A800E58E7F /* SettingsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +240,7 @@
 				1D3623260D0F684500981E51 /* ShortenerAppDelegate.m in Sources */,
 				289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */,
 				289233B00DB2D0DB0083E9F9 /* AboutViewController.m in Sources */,
+				CBB12B0D1102242900E58E7F /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
