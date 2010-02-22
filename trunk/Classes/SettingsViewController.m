@@ -11,7 +11,7 @@
 
 @implementation SettingsViewController
 
-@synthesize delegate;
+@synthesize delegate,cellOne,cellTwo;
 
 - (IBAction)done {
 	[self.delegate settingsViewControllerDidFinish:self];	
@@ -59,6 +59,20 @@
 
 - (void)dealloc {
     [super dealloc];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	if([indexPath row] == 0) return cellOne;
+	if([indexPath row] == 1) return cellTwo;
+	return nil;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	return 2;
 }
 
 @end

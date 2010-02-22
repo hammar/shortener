@@ -8,10 +8,15 @@
 
 @protocol SettingsViewControllerDelegate;
 
-@interface SettingsViewController : UIViewController {
+@interface SettingsViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>{
 	id <SettingsViewControllerDelegate> delegate;
+	
+	IBOutlet UITableViewCell *cellOne;
+	IBOutlet UITableViewCell *cellTwo;
 }
 
+@property (nonatomic, retain) IBOutlet UITableViewCell *cellOne;
+@property (nonatomic, retain) IBOutlet UITableViewCell *cellTwo;
 @property (nonatomic, assign) id <SettingsViewControllerDelegate> delegate;
 - (IBAction)done;
 
