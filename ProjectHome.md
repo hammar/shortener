@@ -1,0 +1,3 @@
+Shortener is an iPhone application that provides quick access to various URL shortening services (presently tinyurl.com, is.gd, and tr.im). Shortener's easy and intuitive GUI lets you copy and paste URLs to and from other applications for purposes such as blogging, tweets, or other workflows involving URL shortening.
+
+Shortener is a free download and is released under the GNU General Public License version 3. Any user with a knowledge of Objective C and iPhone development is free to check out the source code and to contribute to the application. Any suggestions for improvements or bug reports are much appreciated.
